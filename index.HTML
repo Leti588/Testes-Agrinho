@@ -4,43 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte: Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <style>
+        /* Variáveis de Cores para o Modo de Acessibilidade */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #0d3b13;
+            --accent-color: #1b5e20;
+            --card-bg: #f4f9f4;
+            --button-bg: #0d3b13;
+            --button-text: #ffffff;
+        }
 
-    <header>
-        <div class="logo">Agro Forte</div>
-        <button class="btn-acessibilidade" onclick="toggleAcessibilidade()" aria-label="Alternar alto contraste">
-            🌓 Alto Contraste
-        </button>
-    </header>
+        /* Classe de Alto Contraste (Ativada via JS) */
+        .alto-contraste {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --accent-color: #81c784;
+            --card-bg: #1e1e1e;
+            --button-bg: #ffffff;
+            --button-text: #121212;
+        }
 
-    <main>
-        <section class="hero">
-            <h1>Futuro Sustentável</h1>
-            <p>A força do campo unida à preservação ambiental. Descubra como a tecnologia e as práticas conscientes estão moldando a nova era da agricultura brasileira.</p>
-        </section>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-        <section class="pilares">
-            <div class="card">
-                <h2>Inovação Verde</h2>
-                <p>Uso de biotecnologia e drones para otimizar o plantio, reduzindo o desperdício de água e insumos diretamente na lavoura.</p>
-            </div>
-            <div class="card">
-                <h2>Preservação</h2>
-                <p>Práticas de rotação de culturas e manejo direto que protegem o solo, mantendo os nutrientes e combatendo as mudanças climáticas.</p>
-            </div>
-            <div class="card">
-                <h2>Energia Limpa</h2>
-                <p>Fazendas autossuficientes utilizando energia solar e biomassa, transformando resíduos em combustível para o próprio desenvolvimento.</p>
-            </div>
-        </section>
-    </main>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
 
-    <footer>
-        <p>&copy; 2026 Agro Forte: Futuro Sustentável. Todos os direitos reservados.</p>
-    </footer>
+        /* Cabeçalho e Botão de Acessibilidade */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-color);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-acessibilidade {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: 2px solid var(--text-color);
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-acessibilidade:hover {
+            opacity: 0.9;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Seção de Pilares (Cards) */
+        .pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px
